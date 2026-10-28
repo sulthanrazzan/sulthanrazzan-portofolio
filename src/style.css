@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* Varian dark: aktif saat <html> punya class "dark" */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  color-scheme: dark;
+}
+
+/* Mode terang: palet slate dibalik, hijau dibuat lebih gelap agar kontras */
+html:not(.dark) {
+  color-scheme: light;
+  --color-slate-950: #f8fafc;
+  --color-slate-900: #f1f5f9;
+  --color-slate-800: #e2e8f0;
+  --color-slate-700: #cbd5e1;
+  --color-slate-500: #64748b;
+  --color-slate-400: #475569;
+  --color-slate-300: #334155;
+  --color-slate-100: #0f172a;
+  --color-emerald-400: #047857;
+  --color-emerald-300: #059669;
+}

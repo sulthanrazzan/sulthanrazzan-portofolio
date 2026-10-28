@@ -1,0 +1,397 @@
+   <!doctype html>
+   <html lang="id">
+     <head>
+       <meta charset="UTF-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       <script>
+          try {
+            if (localStorage.getItem('theme') !== 'light') {
+              document.documentElement.classList.add('dark')
+            }
+          } catch (e) {
+            document.documentElement.classList.add('dark')
+          }
+        </script>
+       <title>Sulthan Razzan Iza Saloewa | Portfolio</title>
+       <link rel="preconnect" href="https://fonts.googleapis.com"/>
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+     </head>
+     <body class="bg-slate-950 text-slate-100 antialiased">
+            <!-- NAVBAR -->
+      <header class="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
+        <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+          <a href="#" class="font-mono text-sm font-semibold text-emerald-300 sm:text-base">Sulthan Razzan Iza Saloewa</a>
+
+          <ul class="hidden items-center gap-8 text-sm text-slate-400 md:flex">
+            <li><a href="#tentang" class="transition hover:text-emerald-400">Tentang</a></li>
+            <li><a href="#proyek" class="transition hover:text-emerald-400">Proyek</a></li>
+            <li><a href="#pengalaman" class="transition hover:text-emerald-400">Pengalaman</a></li>
+            <li><a href="#skill" class="transition hover:text-emerald-400">Skill</a></li>
+            <li><a href="#kontak" class="transition hover:text-emerald-400">Kontak</a></li>
+          </ul>
+
+          <div class="flex items-center gap-3">
+            <!-- Tombol mode terang/gelap -->
+            <button id="theme-toggle" type="button" aria-label="Ganti mode terang atau gelap"
+                    class="rounded-lg border border-slate-700 p-2 text-slate-400 transition hover:border-emerald-400 hover:text-emerald-400">
+              <svg class="hidden h-5 w-5 dark:block" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+              </svg>
+              <svg class="block h-5 w-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+              </svg>
+            </button>
+
+            <!-- Unduh CV: hanya tampil di layar menengah ke atas -->
+            <a href="/CV-Sulthan-Razzan.pdf" download
+               class="hidden rounded-lg border border-emerald-400 px-4 py-2 text-sm font-medium text-emerald-400 transition hover:bg-emerald-400 hover:text-slate-950 md:inline-block">
+              Unduh CV
+            </a>
+
+            <!-- Hamburger: hanya tampil di HP -->
+            <button id="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu"
+                    class="rounded-lg border border-slate-700 p-2 text-slate-400 transition hover:border-emerald-400 hover:text-emerald-400 md:hidden">
+              <svg id="icon-open" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+              <svg id="icon-close" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </nav>
+
+        <!-- Panel menu HP -->
+        <div id="mobile-menu" class="hidden border-t border-slate-800 md:hidden">
+          <ul class="mx-auto flex max-w-5xl flex-col gap-1 px-6 py-4 text-slate-400">
+            <li><a href="#tentang" class="block rounded-lg px-3 py-2 transition hover:bg-slate-800 hover:text-emerald-400">Tentang</a></li>
+            <li><a href="#proyek" class="block rounded-lg px-3 py-2 transition hover:bg-slate-800 hover:text-emerald-400">Proyek</a></li>
+            <li><a href="#pengalaman" class="block rounded-lg px-3 py-2 transition hover:bg-slate-800 hover:text-emerald-400">Pengalaman</a></li>
+            <li><a href="#skill" class="block rounded-lg px-3 py-2 transition hover:bg-slate-800 hover:text-emerald-400">Skill</a></li>
+            <li><a href="#kontak" class="block rounded-lg px-3 py-2 transition hover:bg-slate-800 hover:text-emerald-400">Kontak</a></li>
+            <li><a href="/CV-Sulthan-Razzan.pdf" download class="block rounded-lg px-3 py-2 font-medium text-emerald-400 transition hover:bg-slate-800">Unduh CV</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <main>
+      <!-- HERO -->
+        <section class="mx-auto max-w-5xl px-6 pt-16 pb-8 md:pt-24 md:pb-8">
+          <div class="grid items-center gap-10 md:grid-cols-[1fr_auto]">
+
+            <div>
+              <p class="font-mono text-sm text-emerald-400">Halo, saya</p>
+
+              <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+                Sulthan Razzan Iza Saloewa
+              </h1>
+
+              <h2 class="mt-4 text-xl text-slate-400 sm:text-2xl">
+                Junior Software Developer
+              </h2>
+              <p class="mt-2 font-mono text-sm text-slate-500">
+                C# · ASP.NET Core · PostgreSQL · Python
+              </p>
+
+              <p class="mt-6 max-w-xl leading-relaxed text-slate-400">
+                Saya membangun REST API yang rapi dan terdokumentasi, dan senang
+                menelusuri masalah sampai ke akarnya.
+              </p>
+
+              <div class="mt-8 flex flex-wrap gap-4">
+                <a href="#proyek"
+                  class="rounded-lg bg-emerald-400 px-5 py-3 font-medium text-slate-950 transition hover:bg-emerald-300">
+                  Lihat Proyek
+                </a>
+                <a href="https://www.linkedin.com/in/sulthan-razzan-52034b335/" target="_blank" rel="noopener"
+                  class="rounded-lg border border-slate-700 px-5 py-3 font-medium transition hover:border-emerald-400 hover:text-emerald-400">
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+
+            <img src="/src/assets/foto-profil.jpg"
+                alt="Foto Sulthan Razzan Iza Saloewa"
+                class="order-first mx-auto h-40 w-40 rounded-full border-2 border-emerald-400/60 object-cover object-[center_70%] shadow-lg shadow-emerald-400/10 md:order-none md:h-64 md:w-64" />
+
+          </div>
+        </section>
+          <!-- TENTANG -->
+        <section id="tentang" class="mx-auto max-w-5xl px-6 py-10">
+          <h2 class="font-mono text-sm text-emerald-400">// tentang</h2>
+            <div class="mt-6 grid gap-10 md:grid-cols-3">
+              <p class="leading-relaxed text-slate-400 md:col-span-2">
+                Lulusan Sistem Informasi Universitas Gunadarma (IPK 3,72) yang berpengalaman
+                membangun REST API dengan C# dan ASP.NET Core 8, memvalidasi data, dan
+                menganalisis sentimen dengan IndoBERT (akurasi 87,13%). Teliti, terstruktur,
+                dan terbiasa mendokumentasikan pekerjaan. Siap berkontribusi dan terus
+                belajar dalam tim.
+              </p>
+            <div class="grid grid-cols-3 gap-4 md:grid-cols-1">
+            <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+              <p class="text-2xl font-bold text-emerald-400">3,72</p>
+              <p class="text-sm text-slate-400">IPK (skala 4,00)</p>
+            </div>
+            <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+              <p class="text-2xl font-bold text-emerald-400">87,13%</p>
+              <p class="text-sm text-slate-400">Akurasi IndoBERT</p>
+            </div>
+            <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+              <p class="text-2xl font-bold text-emerald-400">5.000</p>
+              <p class="text-sm text-slate-400">Ulasan diolah</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- PROYEK -->
+      <section id="proyek" class="mx-auto max-w-5xl px-6 py-10">
+        <h2 class="font-mono text-sm text-emerald-400">// proyek</h2>
+
+        <div class="mt-6 space-y-8">
+
+          <!-- Proyek 1: Recruitment Management System -->
+          <article class="grid gap-6 rounded-2xl border border-slate-800 bg-slate-900/50 p-6 transition hover:border-emerald-400/50 md:grid-cols-2">
+            <img src="/src/assets/magang-intikom.jpg"
+            alt="Sulthan Razzan saat magang di PT Intikom Berlian Mustika"
+            loading="lazy"
+            class="aspect-video w-full rounded-lg border border-slate-800 object-cover object-top" />
+
+            <div class="flex flex-col">
+              <p class="font-mono text-xs text-emerald-400">Backend · Magang</p>
+              <h3 class="mt-2 text-xl font-semibold">Recruitment Management System</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-400">
+                Sistem rekrutmen yang saya kembangkan saat magang di PT Intikom Berlian Mustika,
+                untuk mengelola profil kandidat dan lowongan kerja lewat REST API.
+              </p>
+              <ul class="mt-4 space-y-2 text-sm text-slate-400">
+                <li class="flex gap-2"><span class="text-emerald-400">▹</span>CRUD kandidat: years of experience dan status aktivasi</li>
+                <li class="flex gap-2"><span class="text-emerald-400">▹</span>Status lowongan Draft/Published/Closed, hanya yang aktif tampil ke publik</li>
+                <li class="flex gap-2"><span class="text-emerald-400">▹</span>API terdokumentasi Swagger, termasuk multipart file upload</li>
+              </ul>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">C#</span>
+                <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">ASP.NET Core 8</span>
+                <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">PostgreSQL</span>
+                <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">Swagger</span>
+                <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">Postman</span>
+              </div>
+              <p class="mt-auto pt-4 text-xs text-slate-500">Kode bersifat internal perusahaan, sehingga tidak dipublikasikan.</p>
+            </div>
+          </article>
+
+          <!-- Proyek 2: Analisis Sentimen M-Pajak -->
+          <article class="grid gap-6 rounded-2xl border border-slate-800 bg-slate-900/50 p-6 transition hover:border-emerald-400/50 md:grid-cols-2">
+            <img src="/src/assets/skripsi-hasil.png"
+                alt="Hasil evaluasi model IndoBERT: precision, recall, dan F1-score per kelas"
+                loading="lazy"
+                class="aspect-video w-full rounded-lg border border-slate-800 bg-white object-contain" />
+
+            <div class="flex flex-col">
+              <p class="font-mono text-xs text-emerald-400">NLP · Skripsi</p>
+              <h3 class="mt-2 text-xl font-semibold">Analisis Sentimen Aplikasi M-Pajak</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-400">
+                Analisis sentimen 5.000 ulasan aplikasi M-Pajak dari Google Play Store,
+                mengikuti tahapan CRISP-DM.
+              </p>
+              <ul class="mt-4 space-y-2 text-sm text-slate-400">
+                <li class="flex gap-2"><span class="text-emerald-400">▹</span>Scraping, cleaning, dan preprocessing teks dengan Python</li>
+                <li class="flex gap-2"><span class="text-emerald-400">▹</span>Pelabelan lexicon (InSet) dilanjutkan review manual</li>
+                <li class="flex gap-2"><span class="text-emerald-400">▹</span>Fine-tuning IndoBERT: accuracy 87,13%, F1-score 0,87</li>
+              </ul>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">Python</span>
+                <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">IndoBERT</span>
+                <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">Web Scraping</span>
+                <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">CRISP-DM</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyek 3: DapurNairaz -->
+          <article class="grid gap-6 rounded-2xl border border-slate-800 bg-slate-900/50 p-6 transition hover:border-emerald-400/50 md:grid-cols-2">
+            <img src="/src/assets/dapurnairaz-home.png"
+                alt="Halaman utama website katalog DapurNairaz"
+                loading="lazy"
+                class="aspect-video w-full rounded-lg border border-slate-800 object-cover object-top" />
+
+            <div class="flex flex-col">
+              <p class="font-mono text-xs text-emerald-400">Web · Penulisan Ilmiah</p>
+              <h3 class="mt-2 text-xl font-semibold">Website Katalog DapurNairaz</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-400">
+                Website katalog untuk toko online makanan olahan beku, dibangun dari analisis
+                kebutuhan sampai jadi.
+              </p>
+              <ul class="mt-4 space-y-2 text-sm text-slate-400">
+                <li class="flex gap-2"><span class="text-emerald-400">▹</span>Analisis kebutuhan pengguna dan perancangan sistem</li>
+                <li class="flex gap-2"><span class="text-emerald-400">▹</span>Halaman admin untuk mengelola produk</li>
+                <li class="flex gap-2"><span class="text-emerald-400">▹</span>Dibangun end-to-end: database MySQL, frontend, dan backend</li>
+              </ul>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">HTML</span>
+                <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">CSS</span>
+                <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">MySQL</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- PENGALAMAN -->
+      <section id="pengalaman" class="mx-auto max-w-5xl px-6 py-10">
+        <h2 class="font-mono text-sm text-emerald-400">// pengalaman</h2>
+
+        <ol class="relative mt-8 space-y-10 border-l border-slate-800 pl-8">
+
+          <li class="relative">
+            <span class="absolute -left-[39px] top-1.5 h-3 w-3 rounded-full bg-emerald-400 ring-4 ring-slate-950"></span>
+            <p class="font-mono text-xs text-slate-500">9–11 Okt 2026</p>
+            <h3 class="mt-1 font-semibold">Volunteer Support Ticketing (Freelance)</h3>
+            <p class="text-sm text-emerald-400">Indonesia Modification Lifestyle Expo, ICE BSD</p>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">
+              Melayani ticketing pengunjung selama 3 hari (sekitar 4.000 pengunjung di hari
+              pertama dan lebih dari 10.000 di hari kedua), membantu pemasangan gelang masuk,
+              dan berjaga di pintu check out untuk memastikan setiap pengunjung yang keluar
+              sudah ter-check out lewat scan barcode gelang.
+            </p>
+          </li>
+
+          <li class="relative">
+            <span class="absolute -left-[39px] top-1.5 h-3 w-3 rounded-full bg-emerald-400 ring-4 ring-slate-950"></span>
+            <p class="font-mono text-xs text-slate-500">Sep 2025 – Des 2025</p>
+            <h3 class="mt-1 font-semibold">Backend Developer Intern</h3>
+            <p class="text-sm text-emerald-400">PT Intikom Berlian Mustika</p>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">
+              Mengembangkan Recruitment Management System dengan ASP.NET Core 8 Web API dan
+              PostgreSQL: modul kandidat dan lowongan, arsitektur berlapis, dokumentasi
+              Swagger, serta pengujian endpoint dengan Postman.
+            </p>
+          </li>
+
+          <li class="relative">
+            <span class="absolute -left-[39px] top-1.5 h-3 w-3 rounded-full bg-emerald-400 ring-4 ring-slate-950"></span>
+            <p class="font-mono text-xs text-slate-500">Agu 2024 dan Agu 2025</p>
+            <h3 class="mt-1 font-semibold">Quality Control &amp; Administration (Freelance)</h3>
+            <p class="text-sm text-emerald-400">PT Bumame</p>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">
+              Memeriksa, mengolah, dan memvalidasi data hasil pemeriksaan pasien agar akurat
+              dan lengkap, serta mengoreksi ketidakcocokan data.
+            </p>
+          </li>
+
+          <li class="relative">
+            <span class="absolute -left-[39px] top-1.5 h-3 w-3 rounded-full bg-emerald-400 ring-4 ring-slate-950"></span>
+            <p class="font-mono text-xs text-slate-500">Agu 2024 – Agu 2026</p>
+            <h3 class="mt-1 font-semibold">Panitia Acara</h3>
+            <p class="text-sm text-emerald-400">PURBAL FEST</p>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">
+              Ketua Divisi Logistik (2024), Ketua Divisi K3 (2025), dan Staf (2026).
+              Mengoordinasikan kebutuhan logistik serta keamanan, kesehatan, dan kebersihan
+              acara bersama divisi lain.
+            </p>
+          </li>
+
+        </ol>
+      </section>
+
+      <!-- SKILL -->
+      <section id="skill" class="mx-auto max-w-5xl px-6 py-10">
+        <h2 class="font-mono text-sm text-emerald-400">// skill</h2>
+
+        <div class="mt-6 grid gap-6 sm:grid-cols-2">
+
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-6 transition hover:border-emerald-400/50">
+          <h3 class="font-semibold">Backend</h3>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">C#</span>
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">ASP.NET Core 8</span>
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">RESTful API</span>
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">Layered Architecture</span>
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">Swagger/OpenAPI</span>
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">Postman</span>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-6 transition hover:border-emerald-400/50">
+          <h3 class="font-semibold">Database</h3>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">PostgreSQL</span>
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">MySQL</span>
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">SQL</span>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-6 transition hover:border-emerald-400/50">
+          <h3 class="font-semibold">Data &amp; NLP</h3>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">Python</span>
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">Web Scraping</span>
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">Data Cleaning</span>
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">Data Validation</span>
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">Sentiment Analysis</span>
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">IndoBERT</span>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-6 transition hover:border-emerald-400/50">
+          <h3 class="font-semibold">Web &amp; Tools</h3>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">HTML</span>
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">CSS</span>
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">Tailwind CSS</span>
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">Figma</span>
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">VS Code</span>
+            <span class="rounded-md bg-slate-800 px-3 py-1 font-mono text-xs text-slate-300">Excel</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- KONTAK -->
+    <section id="kontak" class="mx-auto max-w-5xl px-6 py-10">
+      <h2 class="font-mono text-sm text-emerald-400">// kontak</h2>
+
+      <div class="mt-6 rounded-2xl border border-slate-800 bg-slate-900/50 p-8 text-center">
+        <h3 class="text-2xl font-bold">Mari berbincang</h3>
+        <p class="mx-auto mt-3 max-w-xl text-slate-400">
+          Saya terbuka untuk posisi junior developer dan magang. Silakan hubungi saya lewat email, WhatsApp atau LinkedIn.
+        </p>
+
+        <div class="mt-6 flex flex-wrap justify-center gap-4">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=saloewarazzan@gmail.com&su=Halo%20Sulthan"
+            target="_blank" rel="noopener"
+            class="rounded-lg border border-[#dadce0] bg-white px-5 py-3 font-medium text-[#202124] transition hover:bg-[#f1f3f4]">
+            Kirim Email
+          </a>
+          <a href="https://wa.me/6282111140713?text=Halo%20Sulthan%2C%20saya%20melihat%20portofolio%20Anda."
+            target="_blank" rel="noopener"
+            class="rounded-lg bg-[#25D366] px-5 py-3 font-medium text-white transition hover:bg-[#1ebe5a]">
+            WhatsApp
+          </a>
+          <a href="https://www.linkedin.com/in/sulthan-razzan-52034b335/" target="_blank" rel="noopener"
+            class="rounded-lg bg-[#0A66C2] px-5 py-3 font-medium text-white transition hover:bg-[#004182]">
+            LinkedIn
+          </a>
+          <!-- Aktifkan kalau GitHub sudah siap, ganti LINK-GITHUB-ANDA
+          <a href="LINK-GITHUB-ANDA" target="_blank" rel="noopener"
+            class="rounded-lg border border-slate-700 px-5 py-3 font-medium transition hover:border-emerald-400 hover:text-emerald-400">
+            GitHub
+          </a>
+          -->
+        </div>
+        <p class="mt-4 text-sm text-slate-500">
+          atau salin: <span class="font-mono text-slate-400">saloewarazzan@gmail.com</span>
+        </p>
+      </div>
+</section>
+  </main>
+    <footer class="border-t border-slate-800">
+      <p class="mx-auto max-w-5xl px-6 py-6 text-center text-sm text-slate-500">
+        © 2026 Sulthan Razzan Iza Saloewa
+      </p>
+    </footer>
+  <script type="module" src="/src/main.js"></script>
+  </body>
+  </html>   
